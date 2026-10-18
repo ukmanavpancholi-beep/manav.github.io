@@ -85,26 +85,28 @@ nav a:hover{color:#fff}
 
 /* booking */
 .book{background:var(--chalk)}
-.bk{display:grid;grid-template-columns:1fr 1.35fr;gap:56px;align-items:start}
+.bk{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
 .bk .lead{color:#4a5670;max-width:38ch}
 .phone{display:inline-block;margin-top:14px;font:800 1.6rem var(--head);text-decoration:none;border-bottom:3px solid var(--red)}
-form{background:var(--navy);color:#fff;border-radius:24px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:20px;box-shadow:0 40px 80px -30px rgba(11,20,39,.55)}
-.full{grid-column:1/-1}
-label,.lbl{display:block;font-weight:600;font-size:.9rem;margin-bottom:8px;color:#d6dcea}
-input,select,textarea{width:100%;padding:14px 16px;font:inherit;color:#fff;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.2);border-radius:12px}
-select option{color:#16213a}
-input::placeholder,textarea::placeholder{color:#7f8ba2}
-input:focus,select:focus,textarea:focus{outline:none;border-color:#fff;background:rgba(255,255,255,.12)}
-input[type=date]{color-scheme:dark}
-textarea{resize:vertical;min-height:88px}
-.slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(76px,1fr));gap:8px}
-.slots label{margin:0}
-.slots input{position:absolute;opacity:0;width:1px;height:1px}
-.slots span{display:block;text-align:center;padding:10px 0;border-radius:10px;border:1.5px solid rgba(255,255,255,.2);font-weight:500;font-size:.92rem;cursor:pointer;color:#fff;transition:background .15s}
-.slots span:hover{background:rgba(255,255,255,.12)}
-.slots input:checked+span{background:var(--red);border-color:var(--red)}
-.slots input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
-.note{font-size:.86rem;color:var(--mute);margin:12px 0 0;text-align:center}
+.bcard{background:var(--navy);color:#fff;border-radius:24px;padding:40px;box-shadow:0 40px 80px -30px rgba(11,20,39,.55)}
+.bcard h3{font-size:1.8rem;font-weight:800;margin-bottom:18px}
+.bcard ol{margin:0 0 28px;padding-left:22px;color:#c5cddd}
+.bcard li{padding:5px 0}
+
+/* review prompt */
+.ov{position:fixed;inset:0;z-index:50;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(7,12,24,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.ov.open{display:flex}
+.modal{position:relative;width:100%;max-width:460px;background:var(--navy);color:#fff;border-radius:24px;padding:40px 34px 32px;text-align:center;box-shadow:0 40px 80px -20px rgba(0,0,0,.6)}
+.modal .tick{width:60px;height:60px;margin:0 auto 18px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:1.9rem;line-height:1}
+.modal h2{font-size:1.9rem;margin-bottom:10px}
+.modal p{margin:0 0 22px;color:#c5cddd}
+.stars{display:flex;justify-content:center;gap:6px;margin-bottom:8px}
+.stars button{background:none;border:0;padding:2px;font-size:2.6rem;line-height:1;cursor:pointer;color:rgba(255,255,255,.28);transition:transform .12s,color .12s}
+.stars button.on{color:#f6b82e}
+.stars button:hover{transform:scale(1.12)}
+.rt{min-height:1.5em;margin:0 0 20px!important;font-weight:500;color:#fff!important}
+.modal .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.later{display:block;margin:16px auto 0;background:none;border:0;color:var(--mute);font:500 .95rem var(--body);cursor:pointer;text-decoration:underline}
 
 /* visit */
 .visit{background:var(--white)}
@@ -127,7 +129,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
   .row{grid-template-columns:1fr;gap:8px}
   .pts{grid-template-columns:1fr}
   .pts div,.pts div+div{padding:26px 0;border-left:0;border-bottom:1px solid var(--line)}
-  form{grid-template-columns:1fr;padding:26px}
+  .bcard{padding:28px}
   iframe{height:300px}
   .bar .btn{display:none}
 }
@@ -145,7 +147,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <a href="#book">Book</a>
       <a href="#visit">Find us</a>
     </nav>
-    <a class="btn red" href="#book">Book now</a>
+    <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument">Book now</a>
   </div>
 </header>
 
@@ -156,7 +158,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <h1>Sharp cuts in the heart of Stanmore.</h1>
       <p>Classic haircuts, skin fades, beard shaping and hot towel shaves, done with care on Stanmore Hill.</p>
       <div class="cta">
-        <a class="btn red" href="#book">Book now</a>
+        <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument">Book now</a>
         <a class="btn line" href="tel:+447777936575">Call</a>
         <a class="btn line" href="https://www.google.com/maps/dir/?api=1&destination=87b+Stanmore+Hill+Stanmore+HA7+3DZ" target="_blank" rel="noopener">Directions</a>
       </div>
@@ -177,7 +179,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <h2>Everything from a quick tidy to a full grooming</h2>
       <div>
         <p>A comprehensive grooming experience for men of all ages, from classic cuts to modern fades.</p>
-        <a class="btn navy" href="#book">Book your cut</a>
+        <a class="btn navy" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument">Book your cut</a>
       </div>
     </div>
     <div class="rows">
@@ -206,47 +208,18 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
   <div class="wrap bk">
     <div>
       <h2>Book your appointment</h2>
-      <p class="lead">Pick a service, a day and a time between 10:00 and 17:00. Your booking opens in Gmail ready to send, and we will confirm with you.</p>
+      <p class="lead">Choose a time that suits you on our booking page. It takes less than a minute.</p>
       <a class="phone" href="tel:+447777936575">+44 7777 936575</a>
     </div>
-    <form id="bookingForm">
-      <div>
-        <label for="name">Your name</label>
-        <input id="name" name="name" required autocomplete="name" placeholder="Full name">
-      </div>
-      <div>
-        <label for="phone">Phone number</label>
-        <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="07...">
-      </div>
-      <div>
-        <label for="service">Service</label>
-        <select id="service" name="service" required>
-          <option value="">Choose a service</option>
-          <option>Classic men's haircut</option>
-          <option>Skin fade</option>
-          <option>Beard grooming and shaping</option>
-          <option>Hot towel shave</option>
-          <option>Haircut and beard</option>
-          <option>Styling and consultation</option>
-        </select>
-      </div>
-      <div>
-        <label for="date">Date</label>
-        <input id="date" name="date" type="date" required>
-      </div>
-      <div class="full">
-        <span class="lbl" id="tl">Time</span>
-        <div class="slots" id="slots" role="radiogroup" aria-labelledby="tl"></div>
-      </div>
-      <div class="full">
-        <label for="notes">Notes (optional)</label>
-        <textarea id="notes" name="notes" placeholder="Anything we should know?"></textarea>
-      </div>
-      <div class="full">
-        <button class="btn red" type="submit" style="width:100%">Book now</button>
-        <p class="note">Opens Gmail with your booking. Press Send there to finish.</p>
-      </div>
-    </form>
+    <div class="bcard">
+      <h3>Book a haircut</h3>
+      <ol>
+        <li>Press Book now</li>
+        <li>Pick a day and time between 10:00 and 17:00</li>
+        <li>Confirm your details and you are booked</li>
+      </ol>
+      <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument" style="width:100%">Book now</a>
+    </div>
   </div>
 </section>
 
@@ -274,41 +247,76 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
   </div>
 </footer>
 
+<div class="ov" id="reviewOv" role="dialog" aria-modal="true" aria-labelledby="rvTitle">
+  <div class="modal">
+    <div class="tick" aria-hidden="true">&#10003;</div>
+    <h2 id="rvTitle">You are booked in</h2>
+    <p>Thank you for booking with Stanmore Barbers. How was your booking experience? Rate us, then leave a Google review.</p>
+    <div class="stars" id="stars" role="radiogroup" aria-label="Star rating"></div>
+    <p class="rt" id="rt" aria-live="polite"></p>
+    <button class="btn red" id="rvBtn" type="button" style="width:100%" disabled>Select a rating</button>
+    <button class="later" id="rvLater" type="button">Maybe later</button>
+  </div>
+</div>
+
 <script>
-// Bookings are sent to this Gmail address.
-var BOOKING_EMAIL = "ukmanavpancholi@gmail.com";
+// Replace with your direct Google review link (Google Business Profile > "Get more reviews").
+// It looks like: https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
+var GOOGLE_REVIEW_URL = "https://www.google.com/maps/search/?api=1&query=Stanmore+Barbers+87b+Stanmore+Hill+Stanmore+HA7+3DZ";
 
 (function(){
-  var slots = document.getElementById('slots'), html = '', first = true;
-  for (var h = 10; h < 17; h++) {
-    ['00','30'].forEach(function(m){
-      var t = (h < 10 ? '0' : '') + h + ':' + m;
-      html += '<label><input type="radio" name="time" value="' + t + '"' + (first ? ' required' : '') + '><span>' + t + '</span></label>';
-      first = false;
-    });
-  }
-  slots.innerHTML = html;
-  document.getElementById('date').min = new Date().toISOString().split('T')[0];
+  // The review prompt only appears when Cal.com sends the customer back
+  // after a completed booking (to this page with ?booked=true).
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('booked') !== 'true') return;
+  history.replaceState(null, '', window.location.pathname + window.location.hash);
 
-  document.getElementById('bookingForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var f = e.target;
-    var time = f.querySelector('input[name=time]:checked').value;
-    var d = new Date(f.date.value + 'T00:00:00');
-    var pretty = d.toLocaleDateString('en-GB', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
-    var subject = 'Booking request: ' + f.service.value + ' on ' + pretty + ' at ' + time;
-    var body = 'Hello Stanmore Barbers,\n\nI would like to book an appointment.\n\n' +
-      'Name: ' + f.name.value + '\n' +
-      'Phone: ' + f.phone.value + '\n' +
-      'Service: ' + f.service.value + '\n' +
-      'Date: ' + pretty + '\n' +
-      'Time: ' + time + '\n' +
-      (f.notes.value ? 'Notes: ' + f.notes.value + '\n' : '') +
-      '\nThank you.';
-    var url = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(BOOKING_EMAIL) +
-      '&su=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    window.open(url, '_blank', 'noopener');
+  var ov = document.getElementById('reviewOv'),
+      starsEl = document.getElementById('stars'),
+      rt = document.getElementById('rt'),
+      btn = document.getElementById('rvBtn'),
+      labels = ['Poor','Fair','Good','Very good','Excellent'],
+      rating = 0, i, b;
+
+  for (i = 1; i <= 5; i++) {
+    b = document.createElement('button');
+    b.type = 'button';
+    b.innerHTML = '&#9733;';
+    b.setAttribute('role','radio');
+    b.setAttribute('aria-checked','false');
+    b.setAttribute('aria-label', i + (i === 1 ? ' star' : ' stars'));
+    b.dataset.v = i;
+    starsEl.appendChild(b);
+  }
+  var stars = starsEl.querySelectorAll('button');
+
+  function paint(n){
+    stars.forEach(function(s){ s.classList.toggle('on', +s.dataset.v <= n); });
+  }
+  stars.forEach(function(s){
+    s.addEventListener('mouseenter', function(){ paint(+s.dataset.v); });
+    s.addEventListener('focus', function(){ paint(+s.dataset.v); });
+    s.addEventListener('click', function(){
+      rating = +s.dataset.v;
+      stars.forEach(function(x){ x.setAttribute('aria-checked', String(+x.dataset.v === rating)); });
+      rt.textContent = labels[rating - 1];
+      btn.disabled = false;
+      btn.textContent = 'Leave a Google review';
+      paint(rating);
+    });
   });
+  starsEl.addEventListener('mouseleave', function(){ paint(rating); });
+  starsEl.addEventListener('focusout', function(){ paint(rating); });
+
+  btn.addEventListener('click', function(){
+    if (rating) window.location.href = GOOGLE_REVIEW_URL;
+  });
+  function close(){ ov.classList.remove('open'); }
+  document.getElementById('rvLater').addEventListener('click', close);
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+
+  ov.classList.add('open');
+  stars[0].focus();
 })();
 </script>
 </body>
