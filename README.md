@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -108,6 +107,14 @@ nav a:hover{color:#fff}
 .modal .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 .later{display:block;margin:16px auto 0;background:none;border:0;color:var(--mute);font:500 .95rem var(--body);cursor:pointer;text-decoration:underline}
 
+
+/* magnetic Book now */
+.btn.mag{transform:translate(var(--mx,0px),var(--my,0px)) scale(var(--s,1));transition:transform .35s cubic-bezier(.22,1.4,.4,1),background .15s;will-change:transform;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.btn.red.mag{box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),0 10px 28px -8px rgba(208,42,51,.7)}
+.btn.mag.near{transition:transform .12s ease-out,background .15s}
+.btn.mag:hover{transform:translate(var(--mx,0px),var(--my,0px)) scale(var(--s,1))}
+.btn.mag:active{--s:.97}
+
 /* visit */
 .visit{background:var(--white)}
 .vs{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center}
@@ -147,7 +154,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <a href="#book">Book</a>
       <a href="#visit">Find us</a>
     </nav>
-    <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book now</a>
+    <a class="btn red mag" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book now</a>
   </div>
 </header>
 
@@ -158,7 +165,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <h1>Sharp cuts in the heart of Stanmore.</h1>
       <p>Classic haircuts, skin fades, beard shaping and hot towel shaves, done with care on Stanmore Hill.</p>
       <div class="cta">
-        <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book now</a>
+        <a class="btn red mag" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book now</a>
         <a class="btn line" href="tel:+447777936575">Call</a>
         <a class="btn line" href="https://www.google.com/maps/dir/?api=1&destination=87b+Stanmore+Hill+Stanmore+HA7+3DZ" target="_blank" rel="noopener">Directions</a>
       </div>
@@ -179,7 +186,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <h2>Everything from a quick tidy to a full grooming</h2>
       <div>
         <p>A comprehensive grooming experience for men of all ages, from classic cuts to modern fades.</p>
-        <a class="btn navy" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book your cut</a>
+        <a class="btn navy mag" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book your cut</a>
       </div>
     </div>
     <div class="rows">
@@ -218,7 +225,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
         <li>Pick a day and time between 10:00 and 17:00</li>
         <li>Confirm your details and you are booked</li>
       </ol>
-      <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut" style="width:100%">Book now</a>
+      <a class="btn red mag" href="https://cal.com/manav-pancholi-tgr8qa/haircut" style="width:100%">Book now</a>
     </div>
   </div>
 </section>
@@ -317,6 +324,33 @@ var GOOGLE_REVIEW_URL = "https://www.google.com/maps/search/?api=1&query=Stanmor
 
   ov.classList.add('open');
   stars[0].focus();
+})();
+</script>
+<script>
+// Magnetic Book now buttons: they lean toward the pointer when it gets close.
+(function(){
+  if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches ||
+      window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var btns = document.querySelectorAll('.mag'), RANGE = 70, PULL = 0.35, frame;
+  function reset(b){ b.classList.remove('near'); b.style.setProperty('--mx','0px'); b.style.setProperty('--my','0px'); }
+  window.addEventListener('pointermove', function(e){
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(function(){
+      btns.forEach(function(b){
+        var r = b.getBoundingClientRect(),
+            cx = r.left + r.width/2, cy = r.top + r.height/2,
+            dx = e.clientX - cx, dy = e.clientY - cy,
+            ox = Math.max(Math.abs(dx) - r.width/2, 0),
+            oy = Math.max(Math.abs(dy) - r.height/2, 0);
+        if (Math.hypot(ox, oy) < RANGE) {
+          b.classList.add('near');
+          b.style.setProperty('--mx', (dx * PULL).toFixed(1) + 'px');
+          b.style.setProperty('--my', (dy * PULL).toFixed(1) + 'px');
+        } else { reset(b); }
+      });
+    });
+  });
+  document.addEventListener('pointerleave', function(){ btns.forEach(reset); });
 })();
 </script>
 </body>
