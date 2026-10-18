@@ -234,8 +234,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 </footer>
 
 <script>
-// IMPORTANT: put the Gmail address that should receive bookings here.
-var BOOKING_EMAIL = "YOUR-EMAIL@gmail.com";
+// Bookings are sent to this Gmail address.
+var BOOKING_EMAIL = "ukmanavpancholi@gmail.com";
 
 (function(){
   var time = document.getElementById('time');
