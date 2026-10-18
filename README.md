@@ -147,7 +147,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <a href="#book">Book</a>
       <a href="#visit">Find us</a>
     </nav>
-    <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument">Book now</a>
+    <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book now</a>
   </div>
 </header>
 
@@ -158,7 +158,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <h1>Sharp cuts in the heart of Stanmore.</h1>
       <p>Classic haircuts, skin fades, beard shaping and hot towel shaves, done with care on Stanmore Hill.</p>
       <div class="cta">
-        <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument">Book now</a>
+        <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book now</a>
         <a class="btn line" href="tel:+447777936575">Call</a>
         <a class="btn line" href="https://www.google.com/maps/dir/?api=1&destination=87b+Stanmore+Hill+Stanmore+HA7+3DZ" target="_blank" rel="noopener">Directions</a>
       </div>
@@ -179,7 +179,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
       <h2>Everything from a quick tidy to a full grooming</h2>
       <div>
         <p>A comprehensive grooming experience for men of all ages, from classic cuts to modern fades.</p>
-        <a class="btn navy" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument">Book your cut</a>
+        <a class="btn navy" href="https://cal.com/manav-pancholi-tgr8qa/haircut">Book your cut</a>
       </div>
     </div>
     <div class="rows">
@@ -218,7 +218,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
         <li>Pick a day and time between 10:00 and 17:00</li>
         <li>Confirm your details and you are booked</li>
       </ol>
-      <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut-appoument" style="width:100%">Book now</a>
+      <a class="btn red" href="https://cal.com/manav-pancholi-tgr8qa/haircut" style="width:100%">Book now</a>
     </div>
   </div>
 </section>
