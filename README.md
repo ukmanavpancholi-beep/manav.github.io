@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
@@ -116,8 +117,6 @@ footer{background:var(--night);color:var(--mute);padding:34px 0 40px;font-size:.
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
 
-/* mobile action bar */
-.mbar{display:none}
 @media(max-width:860px){
   section{padding:68px 0}
   nav{display:none}
@@ -131,9 +130,6 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
   form{grid-template-columns:1fr;padding:26px}
   iframe{height:300px}
   .bar .btn{display:none}
-  body{padding-bottom:76px}
-  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(11,20,39,.95);border-top:1px solid var(--line)}
-  .mbar .btn{padding:13px 10px}
 }
 @media(prefers-reduced-motion:reduce){.tube{animation:none}html{scroll-behavior:auto}.btn,.row{transition:none}}
 </style>
@@ -277,11 +273,6 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
     <span>+44 7777 936575<br>Open 10:00 - 17:00</span>
   </div>
 </footer>
-
-<div class="mbar">
-  <a class="btn line" href="tel:+447777936575">Call</a>
-  <a class="btn red" href="#book">Book now</a>
-</div>
 
 <script>
 // Bookings are sent to this Gmail address.
