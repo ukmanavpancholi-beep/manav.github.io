@@ -83,6 +83,15 @@ nav a:hover{color:#fff}
 .pts h3{font-size:1.35rem;margin-bottom:10px}
 .pts p{margin:0;color:var(--mute);font-size:.98rem}
 
+/* reviews */
+.reviews{background:var(--white)}
+.rv{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.rv .lead{color:#4a5670;max-width:44ch;margin:0}
+.rvcard{background:var(--chalk);border-radius:24px;padding:36px;border:1px solid #d9dde6}
+.rvcard .st{font-size:2rem;letter-spacing:4px;color:#f6b82e;line-height:1;margin-bottom:12px}
+.rvcard h3{font-size:1.5rem;font-weight:800;margin-bottom:8px}
+.rvcard p{margin:0 0 22px;color:#4a5670}
+
 /* booking */
 .book{background:var(--chalk)}
 .bk{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
@@ -108,7 +117,6 @@ nav a:hover{color:#fff}
 .modal .btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 .later{display:block;margin:16px auto 0;background:none;border:0;color:var(--mute);font:500 .95rem var(--body);cursor:pointer;text-decoration:underline}
 
-
 /* magnetic Book now */
 .btn.mag{transform:translate(var(--mx,0px),var(--my,0px)) scale(var(--s,1));transition:transform .35s cubic-bezier(.22,1.4,.4,1),background .15s;will-change:transform;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
 .btn.red.mag{box-shadow:inset 0 0 0 1px rgba(255,255,255,.25),0 10px 28px -8px rgba(208,42,51,.7)}
@@ -131,7 +139,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
   section{padding:68px 0}
   nav{display:none}
   .hero{padding:52px 0 64px}
-  .hero .wrap,.sv-head,.bk,.vs{grid-template-columns:1fr;gap:36px}
+  .hero .wrap,.sv-head,.bk,.vs,.rv{grid-template-columns:1fr;gap:36px}
   .polewrap{order:-1}
   .pole{transform:scale(.62);transform-origin:top center;height:300px}
   .row{grid-template-columns:1fr;gap:8px}
@@ -152,6 +160,7 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
     <nav aria-label="Main">
       <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
       <a href="#book">Book</a>
       <a href="#visit">Find us</a>
     </nav>
@@ -212,6 +221,21 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
   </div>
 </section>
 
+<section id="reviews" class="reviews">
+  <div class="wrap rv">
+    <div>
+      <h2>What our customers say</h2>
+      <p class="lead">Your feedback helps other people in Stanmore find a barber they can trust.</p>
+    </div>
+    <div class="rvcard">
+      <div class="st" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <h3>Had a cut with us?</h3>
+      <p>Tell us how it went by leaving a quick Google review.</p>
+      <a class="btn red" id="reviewLink" href="https://search.google.com/local/writereview?placeid=ChIJ17_SYQAVdkgRHJst_rEm1XE" target="_blank" rel="noopener">Leave a Google review</a>
+    </div>
+  </div>
+</section>
+
 <section id="book" class="book">
   <div class="wrap bk">
     <div>
@@ -268,9 +292,11 @@ footer b{color:#fff;font-family:var(--head);font-size:1.1rem}
 </div>
 
 <script>
-// Replace with your direct Google review link (Google Business Profile > "Get more reviews").
-// It looks like: https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID
-var GOOGLE_REVIEW_URL = "https://www.google.com/maps/search/?api=1&query=Stanmore+Barbers+87b+Stanmore+Hill+Stanmore+HA7+3DZ";
+// Direct Google review link for Stanmore Barbers (opens the review box straight away).
+var GOOGLE_REVIEW_URL = "https://search.google.com/local/writereview?placeid=ChIJ17_SYQAVdkgRHJst_rEm1XE";
+
+// Point the Reviews section button at the same link.
+document.getElementById('reviewLink').href = GOOGLE_REVIEW_URL;
 
 (function(){
   // The review prompt only appears when Cal.com sends the customer back
